@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SmsMessageManager</string>
+
+    <string name="receivernumber">接收一条来自</string>
+    <string name="recevermessage">的短信，短信内容是</string>
+
+    <string name="empty">空</string>
 </resources>
