@@ -1,5 +1,6 @@
 package com.xyf.SmsMessageManager.sms;
 
+import android.app.Notification;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.text.TextUtils;
 import com.xyf.SmsMessageManager.R;
 import com.xyf.SmsMessageManager.model.MessageItem;
 import com.xyf.SmsMessageManager.utils.LogUtils;
+import com.xyf.SmsMessageManager.utils.NotifcationUtils;
 
 
 /**
@@ -55,6 +57,9 @@ public class SmsHandler extends Handler {
 
             LogUtils.w(Tag,String.format("deleteResult(%d)",result));
         }
+
+        Notification nf = NotifcationUtils.getNotification(mContext,R.drawable.ic_launcher,item.getPhone(),item.getBody());
+        NotifcationUtils.showNotification(mContext,item.getId(),nf);
 
 //        String speedbody = mContext.getString(R.string.receivernumber)  + item.getPhone() + mContext.getString(R.string.recevermessage) + (TextUtils.isEmpty(item.getBody())?mContext.getString(R.string.empty):item.getBody());
 
